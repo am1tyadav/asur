@@ -41,11 +41,3 @@ class FTFeatures(Parameters):
 
     def log_mel_spectrogram(self) -> np.ndarray:
         return librosa.power_to_db(self.mel_spectrogram())
-
-    def plot_spectrogram(self) -> None:
-        librosa.display.specshow(
-            self.log_mel_spectrogram(),
-            sr=self.sample_rate,
-            x_axis='time',
-            y_axis='mel'
-        )

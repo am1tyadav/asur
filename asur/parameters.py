@@ -23,3 +23,6 @@ class Parameters(ABC):
         self.n_mels = kwargs.get('n_mels') or 256
         self.is_mono = kwargs.get('is_mono') or True
         self.audio = None
+
+    def get_param(self, param_name):
+        return vars(self)[param_name]
